@@ -1,0 +1,42 @@
+body{
+    height: auto;
+}
+nav a{
+    font-weight: bold;
+    font-size:40px !important;
+}
+nav img{
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: 50%;
+    object-fit: scale-down;
+    cursor: pointer;
+    transition: border 2s;
+}
+nav img:hover {
+    border: solid 1px #0000FF !important;
+
+}
+#my_text{
+    min-height: 277px;
+    width: 97%;
+    margin-top: 20px;
+    margin-left: auto;
+
+}
+.my_button{
+    display: flex;
+    justify-content: space-between;
+}
+#my_div{
+    padding: 10px;
+    border-bottom: 2px solid ;
+    font-weight: bold;
+    font-size: 30px;
+}
+#result{
+    max-width: 100% !important;
+
+}
+nav .time{  font-family: "Sacramento", cursive;
+}

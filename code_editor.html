@@ -4,62 +4,19 @@
     <meta charset="UTF-8">
     <title>Code Editor </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <style>
-        body{
-            height: auto;
-        }
-        nav a{
-            font-weight: bold;
-            font-size:40px !important;
-        }
-        nav img{
-            max-width: 70px;
-            max-height: 70px;
-            border-radius: 50%;
-            object-fit: scale-down;
-            cursor: pointer;
-            transition: border 2s;
-        }
-        nav img:hover {
-            border: solid 1px #0000FF !important;
-
-        }
-        #my_text{
-            min-height: 277px;
-            width: 97%;
-            margin-top: 20px;
-            margin-left: auto;
-
-        }
-        .my_button{
-            display: flex;
-            justify-content: space-between;
-        }
-        #my_div{
-            padding: 10px;
-            border-bottom: 2px solid ;
-            font-weight: bold;
-            font-size: 30px;
-        }
-        #result{
-            max-width: 100% !important;
-
-        }
-        nav .time{  font-family: "Sacramento", cursive;
-        }
-    </style>
 </head>
 <body>
 
 
 <nav class="navbar navbar-light bg-light border border-primary  color-primary rounded ">
-    <a class="navbar-brand text-dark" href="https://www.linkedin.com/in/mohammad-ali-shikhi-279132137/" target="_blank"><img src="my.jpg" class="d-inline-block align-top disabled" alt="img"></a>
+    <a class="navbar-brand text-dark" href="https://www.linkedin.com/in/mohammad-ali-shikhi-279132137/" target="_blank"><img src="imgs/my.jpg" class="d-inline-block align-top disabled" alt="img"></a>
     <a class="navbar-brand text-primary nav-link disabled time" href="#"></a>
-    <img src="dark.png" class="d-inline-block align-top disabled border border-2 " alt="img" title="change background Color ">
-    <img src="white-background.jpg " class="d-inline-block align-top border border-5" alt="img" width="90" height="90" title="change background Color ">
+    <img src="imgs/dark.png" class="d-inline-block align-top disabled border border-2 " alt="img" title="change background Color ">
+    <img src="imgs/white-background.jpg " class="d-inline-block align-top border border-5" alt="img" width="90" height="90" title="change background Color ">
 </nav>
 
 <main class="text-center ">
@@ -84,59 +41,8 @@
 <div class="container-fluid text-center ">
     <div  id="my_div"  class="text-center border-primary ">Result</div>
     <div id="result"  class="text-center "></div>
-
 </div>
 </div>
-<script>
-    var tag_a=document.getElementsByTagName('a')[1];
-    var myVar = setInterval(myTimer, 1000);
-    function myTimer() {
-        var d = new Date();
-        var t = d.toLocaleTimeString();
-        tag_a.innerHTML =t ;
-    }
-
-    //____________________________________________________________________
-
-    var my_text=document.getElementById('my_text');
-    var result=document.getElementById('result');
-    var Run=document.querySelectorAll("button")[0];
-    var Delete=document.querySelectorAll("button")[1];
-    var img_1=document.querySelectorAll("img")[1];
-    var img_2=document.querySelectorAll("img")[2];
-    var my_div=document.getElementById('my_div');
-    var tag_a2=document.getElementsByTagName('a')[2];
-
-    localStorage.setItem('my_text',my_text.value);
-
-    onload=()=>{
-
-        my_text.value=localStorage.getItem('my_text');
-        result.innerHTML=my_text.value;
-        document.body.style.backgroundColor=localStorage.getItem('backgroundColor');
-        result.style.color= localStorage.getItem('color');
-        my_div.style.color= localStorage.getItem('color');;
-    }
-    Run.onclick=()=>{
-        result.innerHTML=my_text.value;
-        localStorage.setItem('my_text',my_text.value);
-
-    }
-    Delete.onclick=()=>{
-        result.innerHTML="";
-        localStorage.removeItem('my_text')
-    }
-
-    img_1.onclick=()=>{
-        localStorage.setItem('color','White');
-        localStorage.setItem('backgroundColor','#282C34');
-        location.reload();
-    }
-    img_2.onclick=()=>{
-        localStorage.setItem('color','#282C34');
-        localStorage.setItem('backgroundColor','White');
-        location.reload();
-    }
-</script>
+<script src="main.js"></script>
 </body>
 </html>
